@@ -27,8 +27,8 @@ function populateMessages(){
 }
 
 function postMessage(){
-    inUName = document.getElementById("inName").value
-    inUMessage = document.getElementById('inMsg').value
+    inUName = $('#inName')[0].value;
+    inUMessage = $('#inMsg')[0].value;
     if(inUName == '' || inUMessage == ''){console.log('missing field');return;}
     send = JSON.stringify({
         userName: inUName,
@@ -40,5 +40,6 @@ function postMessage(){
         body: send
     })
         .then((response) => response.json())
-        .then((json) => console.log(json));
+        .then((json) => populateMessages());
+        
 }

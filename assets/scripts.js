@@ -30,12 +30,14 @@ function postMessage(){
     inUName = document.getElementById("inName").value
     inUMessage = document.getElementById('inMsg').value
     if(inUName == '' || inUMessage == ''){console.log('missing field');return;}
+    send = JSON.stringify({
+        userName: inUName,
+        message: inUMessage
+    });
+    console.log(send)
     fetch("https://rpsbbo7ko1.execute-api.ap-southeast-2.amazonaws.com/default/T50PostNew",{
         method: "POST",
-        body: {
-            userName: inUName,
-            message: inUMessage
-        }
+        body: send
     })
         .then((response) => response.json())
         .then((json) => console.log(json));

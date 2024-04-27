@@ -35,12 +35,10 @@ function postMessage(){
         message: inUMessage
     });
     console.log(send)
-    /*
     fetch("https://rpsbbo7ko1.execute-api.ap-southeast-2.amazonaws.com/default/T50PostNew",{
         method: "POST",
         body: send
     })
         .then((response) => response.json())
         .then((json) => populateMessages());
-    */
 }

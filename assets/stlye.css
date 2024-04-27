@@ -53,3 +53,23 @@ h2{
     width: 100%;
     padding: 10%;
 }
+.message{
+    background-color: #FAA300;
+    padding-top: 1%;
+    border-radius: 0.2em;
+    border-color: #59D5E0;
+    border-style: solid;
+    border-width: 1em;
+    font-size: x-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    color: #bd3160;
+}
+.messageBody{
+    background-color: #F5DD61;
+    margin-top: 1%;
+    padding: 1%;
+    font-size: large;
+    font-weight: 100;
+    color:black;
+}

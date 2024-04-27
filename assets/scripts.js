@@ -13,3 +13,30 @@ function populateImages(url){
         document.getElementById("content").innerHTML = returnedValue;
     });
 }
+function populateMessages(){
+    $.get('https://rpsbbo7ko1.execute-api.ap-southeast-2.amazonaws.com/default/T50APICall', function(data){
+        
+    messages = JSON.parse(data);
+    returnedValue = "";
+    messages.messages.forEach(element => {
+        returnedValue = returnedValue + '<div class="col-lg-6 message">'+ element.userName +'<div class="messageBody">'+ element.message +'</div></div>'
+    })
+    document.getElementById("content").innerHTML = returnedValue;
+    });
+
+}
+
+function postMessage(){
+    inUName = document.getElementById("inName").value
+    inUMessage = document.getElementById('inMsg').value
+    if(inUName == '' || inUMessage == ''){console.log('missing field');return;}
+    fetch("https://rpsbbo7ko1.execute-api.ap-southeast-2.amazonaws.com/default/T50PostNew",{
+        method: "POST",
+        body: {
+            userName: inUName,
+            message: inUMessage
+        }
+    })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+}

@@ -19,7 +19,7 @@ function populateMessages(){
     messages = JSON.parse(data);
     returnedValue = "";
     messages.messages.forEach(element => {
-        returnedValue = returnedValue + '<div class="col-lg-6 message">'+ element.userName +'<div class="messageBody">'+ element.message +'</div></div>'
+        returnedValue =  '<div class="col-lg-6 message">'+ element.userName +'<div class="messageBody">'+ element.message +'</div></div>' + returnedValue;
     })
     document.getElementById("content").innerHTML = returnedValue;
     });
